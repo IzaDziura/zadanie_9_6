@@ -1,13 +1,12 @@
+var list = document.getElementById ('js-list');
+var addList = document.getElementById ('js-addElem');
 
 function addElementToList (){
 	var element = document.createElement('li');
-	var count =getElementsByTagName ('li');
-	element.innerHTML = ('item' + count + 1);
+	var listElements = document.getElementsByTagName ('li');
+	var count = listElements.length;
+	element.innerHTML = ('Punkt ' + count);
+	list.appendChild(element);
 }
 
-var addList = document.getElementById ('js-addElem');
-var list = document.getElementById ('js-list');
-
-addList.addEventListener ('click', function addElementToList() {
-	addElementToList(list.appendChild(element));
-});
+addList.addEventListener ('click', addElementToList);
